@@ -1,13 +1,13 @@
 # QlikCloudAppObjects
 This PowerShell Script will extract Qlik Cloud application objects, including masterItems.
 
-(Fast) Execution to fetch all app objects without details about Master Items:
+**(Fast) Execution to fetch all app objects without details about Master Items:**
 .\QlikCloudFetchAppObjects.ps1 or .\QlikCloudFetchAppObjects.ps1 -masterItems $false
 
-(Slow) Execution to fetch all app objects, including details about Master Items:
+**(Slow) Execution to fetch all app objects, including details about Master Items:**
 .\QlikCloudFetchAppObjects.ps1 -masterItems $true
 
-How it works:
+**How it works**
 This script will:
 1. fetch the list of spaces and create a mapping
 2. fecth the list of applications
@@ -22,10 +22,10 @@ This script will:
 
 There is a retry mechanism, 3 times for each master item.
 
-Testing:
+**Testing:**
 You can use the local or server mode, update the paths accordingly.
 There are placeholders for you to test for one app and/or one app object.
 
-Pre-requisites:
+**Pre-requisites:**
 PowerShell 5.1 or above
 Azcopy, but you can adapt for Google CLI or AWS CLI, or copy locally too
