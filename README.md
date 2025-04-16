@@ -8,6 +8,7 @@ This PowerShell Script will extract Qlik Cloud application objects, including ma
 .\QlikCloudFetchAppObjects.ps1 -masterItems $true
 
 **How it works**
+
 This script will:
 1. fetch the list of spaces and create a mapping
 2. fecth the list of applications
