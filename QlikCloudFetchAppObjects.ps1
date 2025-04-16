@@ -152,7 +152,7 @@ foreach ($app in $apps) {
     }
 
     # Skip spaces with specific naming conventions
-    if ($spaceInfo.SpaceName -match "^(SELF DEV |RCD |INT )" -or $spaceInfo.SpaceName -match "^PRD.*(extract|pipeline)$") {
+    if ($spaceInfo.SpaceName -match "^(SELF DEV |DEV |RCD |INT )" -or $spaceInfo.SpaceName -match "^PRD.*(extract|pipeline)$") {
         Write-Host "Skipping app $($app.resourceId) in space $($spaceInfo.SpaceName) due to naming convention."
         continue
     }
@@ -205,7 +205,7 @@ foreach ($app in $apps) {
                         # Find qMetaDef
                         $qMetaDefIndex = $jsonString.IndexOf('"qMetaDef":')
                         if ($qMetaDefIndex -ge 0) {
-                            $qMetaDefSubstring = $jsonString.Substring($qMetaDefIndex, [Math]::Min(200, $jsonString.Length - $qMetaDefIndex))
+                            $qMetaDefSubstring = $jsonString.Substring($qMetaDefIndex, [Math]::Min(150, $jsonString.Length - $qMetaDefIndex))
                             if ($qMetaDefSubstring -match '"title"\s*:\s*"([^"]+)"') {
                                 $title = $Matches[1].Trim() # Trim leading/trailing spaces
                             } else {
@@ -218,7 +218,7 @@ foreach ($app in $apps) {
                         # Find visualization
                         $visualizationIndex = $jsonString.IndexOf('"visualization":')
                         if ($visualizationIndex -ge 0) {
-                            $visualizationSubstring = $jsonString.Substring($visualizationIndex, [Math]::Min(200, $jsonString.Length - $visualizationIndex))
+                            $visualizationSubstring = $jsonString.Substring($visualizationIndex, [Math]::Min(100, $jsonString.Length - $visualizationIndex))
                             if ($visualizationSubstring -match '"visualization"\s*:\s*"([^"]+)"') {
                                 $visualization = $Matches[1] # Keep internal spaces, remove quotes
                             } else {
