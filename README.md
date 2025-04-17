@@ -28,6 +28,6 @@ You can use the local or server mode, update the paths accordingly.
 There are placeholders for you to test for one app and/or one app object.
 
 **Pre-requisites:**
-PowerShell 5.1 or above
-Qlik CLI, configured with a Qlik Cloud context
-Azcopy, but you can adapt for Google CLI or AWS CLI, or copy locally too
+PowerShell 5.1 or above.
+Qlik CLI, configured with a Qlik Cloud context.
+Azcopy, but you can adapt for Google CLI or AWS CLI, or copy locally too.
